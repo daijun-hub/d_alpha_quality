@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: alpha-quality-env
+data:
+  env: $env
+  DEBUG_MODEL: "False"
+  worker_mq_host: "$worker_mq_host"
+  worker_mq_port: "$worker_mq_port"
+  worker_mq_username: "$worker_mq_username"
+  worker_mq_password: "$worker_mq_password"
+  worker_mq_virtual_host: "$worker_mq_virtual_host"
+  QUEUE_NAME: "$QUEUE_NAME"
+  ZHT_HOST: "$ZHT_HOST"
+  CAD_SERVICE: "$CAD_SERVICE"
+  CAD_DRAWING_HOST: "$CAD_DRAWING_HOST"
+  FILE_SERVICE_HOST: "$FILE_SERVICE_HOST"
+  DRAW_CONFIG_SERVICE_HOST: "$DRAW_CONFIG_SERVICE_HOST"
+  classification_indoor: "http://192.168.0.229:20013"
+  classification_underground: "http://192.168.0.229:20001"
+  detection_indoor_kitchen: "http://192.168.0.229:20002"
+  detection_indoor_washroom: "http://192.168.0.229:20003"
+  detection_indoor_balcony: "http://192.168.0.229:20004"
+  detection_indoor_livingroom: "http://192.168.0.229:20005"
+  classification_electric: "http://192.168.0.229:20006"
+  classification_electric_detailed: "http://192.168.0.229:20007"
+  detection_peidianxiangzitu: "http://192.168.0.229:20008"
+  detection_peidianxiang_entity: "http://124.71.161.45:9002"
+  detection_zhaoming: "http://192.168.0.229:20009"
+  classification_hvac: "http://192.168.0.229:20012"
+  detection_plumbing_entity: "http://192.168.0.229:20011"
+  classification_plumbing: "http://192.168.0.229:20010"
+  detection_plumbing_system: "http://192.168.0.229:20011"
+  CAD_MONGO_HOST: "172.16.207.70"

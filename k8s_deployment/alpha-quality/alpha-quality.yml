@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alpha-quality
+spec:
+  replicas: $rc
+  selector:
+    matchLabels:
+      app: alpha-quality
+  template:
+    metadata:
+      labels:
+        app: alpha-quality
+    spec:
+      tolerations:
+      - key: "alphadraw"
+        operator: "Equal"
+        value: "worker"
+        effect: "NoExecute"
+      imagePullSecrets:
+      - name: pinlan-harbor
+      containers:
+      - name: alpha-quality-worker
+        image: "$image_tag"
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 1500m
+            memory: $memory
+          requests:
+            cpu: 1500m
+            memory: $memory
+        envFrom:
+        - configMapRef:
+            name: alpha-quality-env

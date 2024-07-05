@@ -1,0 +1,12 @@
+from ..base_type import EntityBaseType
+from ..entity import Entity, ClassifiedEntity
+from ...border_entity import BorderEntity
+
+class ShuiGuanTaoGuan(ClassifiedEntity):
+    chinese_name = "水管套管"
+
+    def __init__(self, entity_object: Entity, border_entity: BorderEntity) -> None:
+        ClassifiedEntity.__init__(self, entity_object)
+
+        self.chinese_name = "水管套管"
+        self.entity_base_type = EntityBaseType.PIPE_ACCESSORY
